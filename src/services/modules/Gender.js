@@ -1,11 +1,27 @@
 import axios from "axios"
 import Constants from './../../utils/Constants'
 
+const user = JSON.parse(sessionStorage.getItem('user'));
+const config = {
+    headers : {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
+};
+
+if(user){
+    const token = user.token;
+    config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
+}
+
 class Gender {
 
-    static async getGender(form){
+    static async getGender(){
         return new Promise((resolve, reject) => {
-            axios.get(Constants.API+`/gender/get/all`,form)
+            axios.get(Constants.API+`/gender/get/all`,config)
             .then(
                 ({ data }) => {
                     // http success

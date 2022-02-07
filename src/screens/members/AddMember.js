@@ -53,6 +53,7 @@ class AddMember extends React.Component{
             },
             ethnicity:[],
             gender: [],
+            position:[],
             sickplan: [],
             title:[],
             union_membership_Status:[],
@@ -151,6 +152,7 @@ class AddMember extends React.Component{
             title,
             union_membership_Status,
             races,
+            position,
         } = this.state;
         return(
             <div className="container">
@@ -359,7 +361,7 @@ class AddMember extends React.Component{
                                                         <label>Race</label>
                                                         <select name="race" className="form-select" onChange={this.handleInput}>
                                                             <option selected disabled>Select a Race</option>
-                                                            {!!races && races.map((Item, key) => {
+                                                            {races?.map((Item, key) => {
                                                                 return (
                                                                     <option
                                                                         key={key}
@@ -398,6 +400,16 @@ class AddMember extends React.Component{
                                                         <label>Position</label>
                                                         <select name="position" className="form-select" onChange={this.handleInput}>
                                                             <option selected disabled>Select a Position</option>
+                                                            {position?.map((Item, key) => {
+                                                                return (
+                                                                    <option
+                                                                        key={key}
+                                                                        value={Item.id}
+                                                                    >
+                                                                        {Item.name}
+                                                                    </option>
+                                                                );
+                                                            })}
                                                         </select>
                                                     </div>
                                                 </div>
@@ -408,6 +420,16 @@ class AddMember extends React.Component{
                                                         <label>Sick Plan<span className="required">*</span></label>
                                                         <select name="sickplan" className="form-select" onChange={this.handleInput}>
                                                             <option selected disabled>Select a Sick Plan</option>
+                                                            {sickplan?.map((Item, key) => {
+                                                                return (
+                                                                    <option
+                                                                        key={key}
+                                                                        value={Item.id}
+                                                                    >
+                                                                        {Item.name}
+                                                                    </option>
+                                                                );
+                                                            })}
                                                         </select>
                                                     </div>
                                                 </div>
