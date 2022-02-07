@@ -1,0 +1,68 @@
+:root {
+  --blue: hsl(234deg 76% 19%);
+  --background: hsl(0deg 0% 93%);
+  --red: hsl(6deg 72% 53%);
+  --red2: hsl(6deg 100% 48%);
+}
+
+body{
+  background-color: var(--background) !important;
+}
+.App {
+  text-align: center;
+}
+.container{
+  max-width: 1600px !important;
+}
+.header{
+  width: 100%;
+  height: 100%;
+}
+label{
+  float: left;
+  color: var(--blue);
+}
+small{
+  font-size: 0.6em;
+}
+.title{
+  float: left;
+  color: var(--blue);
+  font-size: 50px;
+  font-weight: bold;
+}
+.subtitle{
+  color: var(--red);
+  float: left;
+  font-weight: bold;
+}
+.login_title{
+  color: var(--red);
+  font-weight: bold;
+}
+.form-control, .form-select{
+  border-radius: 10px !important;
+  background-color: var(--background) !important;
+  border: none !important;
+}
+.required{
+  color: var(--red);
+}
+
+.link{
+  text-decoration: none;
+  float: left;
+  color: var(--blue);
+}
+
+.btn{
+  width: 100%;
+  border-radius: 10px !important;
+}
+.btn-danger{
+  background-color: var(--red2) !important;
+}
+
+.App-link {
+  color: #61dafb;
+}
